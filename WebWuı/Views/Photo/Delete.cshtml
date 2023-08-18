@@ -1,0 +1,14 @@
+﻿
+@model PhotoDto
+
+
+<h2>Silme Onay Ekranı</h2>
+
+<p>Emin misiniz? Bu öğeyi silmek istediğinizden emin misiniz?</p>
+<p>@Model.Title</p>
+
+<form asp-controller="Photo" asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id">
+    <button type="submit" class="btn btn-danger">Evet, Sil</button>
+    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+</form>

@@ -1,0 +1,46 @@
+﻿@model PhotoDto
+
+<div class="card">
+    <div class="card-header">
+        <h3>@Model.Id </h3>
+         <div class="card-header">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form asp-action="Update" asp-controller="Oda" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" >
+        <div class="input-group mb-3">
+                    <input type="number" asp-for="Tag"  class="form-control" placeholder="Tag">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                              <span class="fas fa-envelope text-danger" ></span>
+                        </div>
+                    </div>
+        </div>
+        <div class="input-group mb-3">
+                    <input type="text" asp-for="Title"  class="form-control" placeholder="Title">
+                    <div class="input-group-append">
+                        <div class="input-group-text">
+                        <span class="fas fa-envelope text-danger" ></span>
+                        </div>
+                    </div>
+        </div>
+        <div>
+
+                 <td><a asp-action="Delete" asp-controller="Photo" class="btn btn-dark" asp-route-Id="@Model.Id">Delete</a> </td>
+
+        </div>
+
+            <br />
+            
+            <div>
+                 <button type="submit"   class="btn btn-primary" value="Kaydet">Güncelleme yap</button>
+
+            </div>
+    </form>
+
+
+       
+   </div>
+</div>
